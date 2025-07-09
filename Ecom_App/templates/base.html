@@ -1,0 +1,47 @@
+<!-- templates/base.html -->
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    {% include "includes/header.html" %}  <!-- Navbar -->
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    {% include "includes/footer.html" %}  <!-- Footer -->
+
+    <script src="{% static 'js/script.js' %}">
+    </script>
+</body>
+</html> {% endcomment %}
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endcomment %}
+</head>
+<body>
+
+    {% comment %} {% include "includes/header.html" %}  <!-- Navbar --> {% endcomment %}
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% comment %} {% include "includes/footer.html" %}  <!-- Footer --> {% endcomment %}
+
+    {% comment %} <script src="{% static 'js/script.js' %}"></script> {% endcomment %}
+</body>
+</html>
+
